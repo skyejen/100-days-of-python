@@ -4,6 +4,35 @@ Personal reference for git commands and situations encountered while learning.
 
 ---
 
+## Splitting one commit into multiple (interactive rebase with edit)
+
+Use when you accidentally put multiple unrelated changes in one commit.
+
+```
+git rebase -i HEAD~N        # N = how many commits back to go
+```
+
+- Change `pick` to `e` on the commit you want to split, save and quit
+- Git pauses on that commit and hands control back to you
+- Run `git reset HEAD~1` to unstage all its files (keeps files, removes commit)
+- Recommit each file separately:
+
+```
+git add filename
+git commit -m "type: description"
+```
+
+- Repeat for each file, then:
+
+```
+git rebase --continue       # tells git the rebase is done
+git push --force-with-lease # push the rewritten history
+```
+
+**NEVER do this on a shared branch.** Rebase rewrites commit history (changes SHA hashes). Anyone who already pulled those commits will have a diverged branch. Solo repos only.
+
+---
+
 ## Amending the most recent commit message
 
 When the last commit message has a typo or needs changing:
@@ -45,6 +74,18 @@ When the rebase is done, force push:
 git push --force-with-lease
 ```
 
+### `--force-with-lease` vs `--force`
+
+`--force` overwrites the remote no questions asked. `--force-with-lease` first checks whether anyone else has pushed to the branch since you last fetched -- if yes, it refuses. Same result on a solo repo, but the right habit to build.
+
+### What is rebase?
+
+Rebase lets you rewrite commit history -- change messages, reorder commits, squash multiple into one, or split one into many. It changes the SHA hashes of commits, which is why you need a force push after. Powerful, and solo-only for the same reason.
+
+### Vim: replacing a single character (normal mode)
+
+`r` then `<character>` replaces the character under the cursor without entering insert mode. So to change `pick` to `edit`, move cursor to `p` and press `r` then `e`. The `r` says "replace mode for one character," the next key is the replacement.
+
 ### Classic mistake
 
 Typing `:wq` while still in INSERT mode saves the literal text `:wq` into the commit message. Fix it with:
@@ -71,3 +112,23 @@ Examples:
 - `exercise: add tip calculator`
 - `exercise: add treasure island`
 - `docs: add README`
+
+---
+
+## Concepts
+
+### What is rebase?
+
+Rebase lets you rewrite commit history -- change messages, reorder commits, squash multiple into one, or split one into many. It physically changes the SHA hash (the unique ID) of each affected commit, which is why the remote no longer recognises them and you need a force push after. Powerful and slightly dangerous -- solo repos only.
+
+### `--force-with-lease` vs `--force`
+
+`--force` overwrites whatever is on the remote, no questions asked. `--force-with-lease` first checks whether anyone else has pushed to the branch since you last fetched -- if yes, it refuses to push and protects their work. On a solo repo the result is the same, but `--force-with-lease` is the right habit to build for when you eventually work in a team.
+
+### SHA hashes
+
+Every commit in git gets a unique fingerprint called a SHA hash (e.g. `a151ae3`). It's calculated from the content of the commit, its message, its timestamp, and its parent commit. Rebase changes the message or content, so the hash changes too -- the old commit and the new commit are technically different objects. This is why git sees your local and remote branches as "diverged" after a rebase.
+
+### Vim: modes
+
+Vim has two main modes. Normal mode is the default -- keys do commands, not typing. Insert mode is for editing text (press `i` to enter, `Escape` to exit). The `:wq` save-and-quit command only works in normal mode. Classic trap: trying to type `:wq` while still in insert mode, which just adds those characters to your file.
