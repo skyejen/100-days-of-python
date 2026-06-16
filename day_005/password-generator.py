@@ -111,3 +111,44 @@ print(hard_password_str)
 
 # # print(hard_password_list)
 # print(hard_password_str)
+
+
+# ================================================================================================================
+
+# Adding Angela's versions below after having watched the walkthrough
+
+# Easy level
+
+# password = ""
+# for char in range(0, num_letters):
+#     password += random.choice(letters)
+
+# for char in range(0, num_symbols):
+#     password += random.choice(symbols)
+
+# for char in range(0, num_numbers):
+#     password += random.choice(numbers)
+
+# print(password)
+
+# Hard level
+
+# password_list = []
+
+# for char in range(0, num_letters):
+#     password_list.append(random.choice(letters))
+
+# for char in range(0, num_symbols):
+#     password_list.append(random.choice(symbols))
+
+# for char in range(0, num_numbers):
+#     password_list.append(random.choice(numbers))
+
+# random.shuffle(password_list)
+
+# password = ""
+
+# for char in password_list:
+#     password += char
+
+# print(f"Your password is: {password}")
