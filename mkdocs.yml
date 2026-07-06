@@ -24,8 +24,8 @@ theme:
     - search.suggest
     - content.code.copy
     - toc.follow
-  logo: images/logo-placeholder.png
-  favicon: images/logo-placeholder.png
+  logo: images/python-v1-1.png
+  favicon: images/python-v1-1.png
   icon:
     repo: fontawesome/brands/github
 
