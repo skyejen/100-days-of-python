@@ -8,6 +8,11 @@ Thumbs.db
 # IDE settings
 .vscode/
 
-# Python cache (common default)
+# Python cache (common default) + virtual envs
 __pycache__/
 *.pyc
+.venv/
+venv/
+
+# MkDocs build output (generated in CI)
+site/

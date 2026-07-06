@@ -1,0 +1,95 @@
+site_name: skyejen / 100 days of python
+site_url: https://skyejen.github.io/100-days-of-python
+site_description: My journey through Angela Yu's 100 Days of Code (Python) — exercises and notes.
+site_author: skyejen
+
+repo_name: skyejen/100-days-of-python
+repo_url: https://github.com/skyejen/100-days-of-python
+
+theme:
+  name: material
+  custom_dir: overrides
+  palette:
+    - scheme: slate
+      primary: custom
+      accent: custom
+  font:
+    text: Inter
+    code: JetBrains Mono
+  features:
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+    - toc.follow
+  logo: images/logo-placeholder.png
+  favicon: images/logo-placeholder.png
+  icon:
+    repo: fontawesome/brands/github
+
+extra_css:
+  - stylesheets/extra.css
+
+extra_javascript:
+  - javascripts/extra.js
+
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - admonition
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.tilde
+  # Pull the real .py / .md source files into pages (single source of truth).
+  # base_path is the repo root, so pages can include e.g. day_012/is_prime.py.
+  - pymdownx.snippets:
+      base_path: ["."]
+      check_paths: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+copyright: >-
+  <span class="md-copyright__highlight">© 2026 Jennifer Skye</span>
+  &nbsp;-&nbsp; stay curious. keep building.
+
+extra:
+  generator: false
+
+plugins:
+  - search
+
+nav:
+  - Days:
+    - days/index.md
+    - Day 2:
+      - Tip Calculator: days/day-02-tip-calculator.md
+    - Day 3:
+      - Introducing the Modulo: days/day-03-introducing-the-modulo.md
+      - Pizza Order Delivery: days/day-03-pizza-order-delivery.md
+      - Treasure Island: days/day-03-treasure-island.md
+    - Day 4:
+      - Rock Paper Scissors: days/day-04-rock-paper-scissors.md
+    - Day 5:
+      - FizzBuzz: days/day-05-fizzbuzz.md
+      - Gauss Challenge: days/day-05-gauss-challenge.md
+      - Highest Score: days/day-05-highest-score.md
+      - Password Generator: days/day-05-password-generator.md
+    - Day 11:
+      - Blackjack: days/day-11-blackjack.md
+    - Day 12:
+      - Is Prime: days/day-12-is-prime.md
+  - Learning Notes:
+    - learning-notes/index.md
+    - Python Notes: learning-notes/loop-control.md
+    - Never Walk a List You're Changing: learning-notes/never-walk-a-list.md
+    - Blackjack — What to Steal from Angela: learning-notes/blackjack-what-to-steal.md
+    - Git Notes: learning-notes/git-notes.md
