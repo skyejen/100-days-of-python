@@ -81,4 +81,11 @@ This site contains exercises I've completed working through [Angela Yu's course]
 <span class="sj-card-meta">day 12</span>
 </a>
 
+<a class="sj-card" href="day-12-number-guessing-game/" markdown="span">
+<span class="sj-card-icon">:material-target:</span>
+<span class="sj-card-title">Number Guessing Game</span>
+<span class="sj-card-desc" title="Guess the number within a set number of lives.">Guess the number within a set number of lives.</span>
+<span class="sj-card-meta">day 12</span>
+</a>
+
 </div>

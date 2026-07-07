@@ -35,4 +35,11 @@ Short concept notes and the odd hard-won lesson that came out of the exercises.
 <span class="sj-card-meta">reference</span>
 </a>
 
+<a class="sj-card" href="make-it-work-then-make-it-nice/" markdown="span">
+<span class="sj-card-icon">:material-hammer-wrench:</span>
+<span class="sj-card-title">Make It Work, Then Make It Nice</span>
+<span class="sj-card-desc" title="Cargo-culting, premature optimization, and writing as you think.">Cargo-culting, premature optimization, and writing as you think.</span>
+<span class="sj-card-meta">lesson</span>
+</a>
+
 </div>
