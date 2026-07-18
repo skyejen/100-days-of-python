@@ -2,6 +2,8 @@
 
 This site contains exercises I've completed working through [Angela Yu's course](https://www.udemy.com/course/100-days-of-code/), grouped by day. Some days are a single exercise, some are a handful, and I add them as I work through the course.
 
+---
+
 <div class="sj-cards" markdown>
 
 <a class="sj-card" href="day-02-tip-calculator/" markdown="span">
