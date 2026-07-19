@@ -549,7 +549,9 @@ body,
 /* Page links → row with dot marker: grey normally, gold when active */
 .md-nav--primary a.md-nav__link {
   display: flex;
-  align-items: center;
+  /* flex-start (not center) so the dot lands on the first line of a title that
+     wraps onto two lines, rather than floating in the gap between them */
+  align-items: flex-start;
   gap: 0.5em;
   padding: 0.25em 0.55em;
   margin: 0.3em 0 0 -0.55em;
@@ -560,9 +562,11 @@ body,
   content: "";
   display: inline-block;
   width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: radial-gradient(circle, #48536a 0 28%, transparent 33%);
+  /* One line box tall, so the dot centres on the first line. The gradient
+     carries its own 6px radius, so the circle stays round at any box height. */
+  height: 1.4em;
+  height: 1lh;
+  background: radial-gradient(circle 6px at 50% 50%, #48536a 0 28%, transparent 33%) no-repeat;
   flex-shrink: 0;
   margin-left: -3px;
   margin-right: -3px;
@@ -605,11 +609,12 @@ body,
 }
 .md-nav--primary a.md-nav__link--active::before {
   width: 12px;
-  height: 12px;
+  height: 1.4em;
+  height: 1lh;
   margin-left: -3px;
   margin-right: -3px;
   transform: translateY(-0.5px);
-  background: radial-gradient(circle, var(--sj-gold) 0 34%, rgba(242, 193, 78, 0.45) 48%, rgba(242, 193, 78, 0.15) 68%, transparent 88%);
+  background: radial-gradient(circle 6px at 50% 50%, var(--sj-gold) 0 34%, rgba(242, 193, 78, 0.45) 48%, rgba(242, 193, 78, 0.15) 68%, transparent 88%) no-repeat;
 }
 
 /* Collapsible group titles → regular weight, like the mockup */
@@ -1334,7 +1339,4 @@ html.sj-night .sj-night-toggle {
 .md-container::-webkit-scrollbar-button:single-button:vertical:increment {
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='8' height='8'><path d='M4 6.5 L7.2 1.5 L0.8 1.5 Z' fill='%2378839a'/></svg>");
 }
-/* Sidebar scrollbars: keep Material's, just make hover gold */
-.md-sidebar__scrollwrap::-webkit-scrollbar-thumb:hover {
-  background: var(--sj-gold);
-}
+/* Sidebar scrollbars: keep Mater
