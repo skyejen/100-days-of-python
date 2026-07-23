@@ -13,11 +13,11 @@ _Day 12 - guess the number in a set number of lives, easy or hard._{ .sj-lead }
 ## Version 1 - first solve
 
 ```python
---8<-- "day_012/number-guessing-game.py"
+--8<-- "day_012/number_guessing_game.py"
 ```
 
 ## Version 2 - solo rewrite
 
 ```python
---8<-- "day_012/number-guessing-game-v2.py"
+--8<-- "day_012/number_guessing_game_v2.py"
 ```
