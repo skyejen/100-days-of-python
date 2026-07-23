@@ -93,6 +93,8 @@ nav:
       - Number Guessing Game: days/day-12-number-guessing-game.md
     - Day 14:
       - Higher Lower: days/day-14-higher-lower-game.md
+    - Day 15:
+      - Coffee Machine: days/day-15-coffee-machine.md
   - Learning Notes:
     - learning-notes/index.md
     # Nested as a collapsible group (like the Days) so the active-item selector

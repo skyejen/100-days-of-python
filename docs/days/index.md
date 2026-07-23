@@ -97,4 +97,11 @@ This site contains exercises I've completed working through [Angela Yu's course]
 <span class="sj-card-meta">day 14</span>
 </a>
 
+<a class="sj-card" href="day-15-coffee-machine/" markdown="span">
+<span class="sj-card-icon">:material-coffee:</span>
+<span class="sj-card-title">Coffee Machine</span>
+<span class="sj-card-desc" title="A working coffee machine: resources, coins, change, and profit.">A working coffee machine: resources, coins, change, and profit.</span>
+<span class="sj-card-meta">day 15 - intermediate</span>
+</a>
+
 </div>
