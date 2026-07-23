@@ -99,8 +99,9 @@ nav:
     # renders correctly and the notes start collapsed. Add a "Jen-written" group
     # alongside this one later.
     - Learning Notes (AI&#8209;assisted):
-      - Python Notes: learning-notes/loop-control.md
+      - Loop Control: learning-notes/loop-control.md
+      - File Naming: learning-notes/file-naming.md
       - Never Walk a List You're Changing: learning-notes/never-walk-a-list.md
-      - Blackjack — What to Steal from Angela: learning-notes/blackjack-what-to-steal.md
+      - Blackjack - What to Steal from Angela: learning-notes/blackjack-what-to-steal.md
       - Make It Work, Then Make It Nice: learning-notes/make-it-work-then-make-it-nice.md
       - Git Notes: learning-notes/git-notes.md

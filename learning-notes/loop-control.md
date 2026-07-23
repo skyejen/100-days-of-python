@@ -1,14 +1,14 @@
-# Python Notes (100 Days of Code)
+# Loop control
 
-> Running reference for Python concepts picked up during the course. Add to it as things come up.
+> The loop-control keywords: `pass`, `continue`, `break`, and `for`/`while` with `else`.
 
-## Loop control: `pass` vs `continue` vs `break`
+## `pass` vs `continue` vs `break`
 
 Three keywords that are easy to mix up. `continue` and `break` live inside loops; `pass` works anywhere a statement is required.
 
-- **`pass`** — does nothing. A placeholder for when Python's syntax needs a statement but you want no action. Execution just falls through and the loop carries on as normal.
-- **`continue`** — skips the rest of the current iteration and jumps straight to the next one.
-- **`break`** — exits the loop entirely, right now.
+- **`pass`** does nothing. A placeholder for when Python's syntax needs a statement but you want no action. Execution just falls through and the loop carries on as normal.
+- **`continue`** skips the rest of the current iteration and jumps straight to the next one.
+- **`break`** exits the loop entirely, right now.
 
 ```python
 for n in [1, 2, 3, 4]:
